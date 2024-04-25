@@ -28,51 +28,56 @@ public class Main {
         while (true) {
 
             // Interfaz de Usuario
-            UIUser();
+          try {
+              UIUser();
 
-            busqueda = lectura.nextInt();
+              busqueda = lectura.nextInt();
 
-            if (busqueda == 0) {
-                   break;
-            }
+              if (busqueda == 0) {
+                  break;
+              }
 
-            System.out.println("Ingrese una cantidad monetaria");
-            cantidad = lectura.nextDouble();
+              System.out.println("Ingrese una cantidad monetaria");
+              cantidad = lectura.nextDouble();
 
-            Map<String, Object> valores = getValores(busqueda);
+              Map<String, Object> valores = getValores(busqueda);
 
-            // Obtener los valores devueltos
-            String input_1 = (String) valores.get("input_1");
-            String input_2 = (String) valores.get("input_2");
-            int flag = (int) valores.get("flag");
+              // Obtener los valores devueltos
+              String input_1 = (String) valores.get("input_1");
+              String input_2 = (String) valores.get("input_2");
+              int flag = (int) valores.get("flag");
 
-            String url_str = "https://v6.exchangerate-api.com/v6/f19b794933b88dd30185eb25/latest/" + input_1;
+              String url_str = "https://v6.exchangerate-api.com/v6/f19b794933b88dd30185eb25/latest/" + input_1;
 
-            Gson gson = new GsonBuilder()
-                    .setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
-                    .setPrettyPrinting()
-                    .create();
+              Gson gson = new GsonBuilder()
+                      .setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
+                      .setPrettyPrinting()
+                      .create();
 
-            HttpClient client = HttpClient.newHttpClient();
-            HttpRequest request = HttpRequest.newBuilder()
-                    .uri(URI.create(url_str))
-                    .build();
-            HttpResponse<String> response = client
-                    .send(request, HttpResponse.BodyHandlers.ofString());
+              HttpClient client = HttpClient.newHttpClient();
+              HttpRequest request = HttpRequest.newBuilder()
+                      .uri(URI.create(url_str))
+                      .build();
+              HttpResponse<String> response = client
+                      .send(request, HttpResponse.BodyHandlers.ofString());
 
-            String json = response.body();
-            // System.out.println(json);
+              String json = response.body();
+              // System.out.println(json);
 
-            JsonObject jsonObject = new Gson().fromJson(response.body(), JsonObject.class);
+              JsonObject jsonObject = new Gson().fromJson(response.body(), JsonObject.class);
 
-            JsonObject ConversionRate = jsonObject.getAsJsonObject("conversion_rates");
+              JsonObject ConversionRate = jsonObject.getAsJsonObject("conversion_rates");
 
-            double usdConversionRate = ConversionRate.get("USD").getAsDouble();
-            double arsConversionRate = ConversionRate.get(input_2).getAsDouble();
+              double usdConversionRate = ConversionRate.get("USD").getAsDouble();
+              double arsConversionRate = ConversionRate.get(input_2).getAsDouble();
 
-            // Imprimir el resultado
-            imprimir(flag, cantidad, arsConversionRate, usdConversionRate, input_1, input_2);
+              // Imprimir el resultado
+              imprimir(flag, cantidad, arsConversionRate, usdConversionRate, input_1, input_2);
 
+          }catch (NullPointerException e){
+              System.out.println("Selecciono una opcion incorrecta");
+
+          }
 
         }
 
@@ -85,14 +90,15 @@ public class Main {
         System.out.println("Sea Bienvenido/a al Conversor de Monedas =]");
         System.out.println(" ");
 
-        System.out.println("1) Dolar == Peso Aregntino");
-        System.out.println("2) Peso Aregntino == Dolar");
-        System.out.println("3) Dolar == Real Brasileño");
-        System.out.println("4) Real Brasileño == Dolar");
-        System.out.println("5) Dolar == Boliviano boliviano");
-        System.out.println("6) Boliviano boliviano == Dolar");
-        System.out.println("7) Dolar == Peso colombiano");
-        System.out.println("8) Peso colombiano == Dolar");
+        System.out.println("1) DÓLAR ==> Peso Argentino");
+        System.out.println("2) Peso Argentino ==> DÓLAR");
+        System.out.println("3) DÓLAR ==> Real Brasileño");
+        System.out.println("4) Real Brasileño ==> DÓLAR");
+        System.out.println("5) DÓLAR ==> Boliviano boliviano");
+        System.out.println("6) Boliviano boliviano ==> DÓLAR");
+        System.out.println("7) DÓLAR ==> Peso Colombiano");
+        System.out.println("8) Peso Colombiano ==> DÓLAR");
+
 
         System.out.println("0) Salir");
     }
