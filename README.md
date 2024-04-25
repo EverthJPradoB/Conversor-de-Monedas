@@ -1,13 +1,14 @@
 # Conversor de Monedas
 
 Este proyecto es un simple conversor de monedas que te permite convertir entre diferentes tipos de monedas. Puedes ingresar una cantidad en una moneda específica y obtener su equivalente en otra moneda seleccionada.
-![image](https://github.com/EverthJPradoB/Conversor-de-Monedas/assets/131471022/68f8b2bc-451d-43ea-8598-eb72785297b8)
 
 ## Características
 
 - Conversión entre diferentes tipos de monedas.
 - Interfaz de usuario intuitiva y fácil de usar.
 - Tasa de cambio actualizada en tiempo real (se requiere conexión a internet).
+![image](https://github.com/EverthJPradoB/Conversor-de-Monedas/assets/131471022/68f8b2bc-451d-43ea-8598-eb72785297b8)
+
 
 ## Tecnologías Utilizadas
 
