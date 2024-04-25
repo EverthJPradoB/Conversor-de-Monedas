@@ -28,9 +28,8 @@ Este proyecto es un simple conversor de monedas que te permite convertir entre d
 ## Uso
 
 1. Ejecuta la aplicación.
-2. Ingresa la cantidad y selecciona la moneda de origen y la moneda de destino.
-3. Haz clic en el botón "Convertir".
-4. La aplicación mostrará la cantidad equivalente en la moneda de destino.
+2. Selecciona la opcion correspondiente e ingresar la cantidad esperada.
+3. La aplicación mostrará la cantidad equivalente en la moneda de destino.
 
 ## Contribución
 
