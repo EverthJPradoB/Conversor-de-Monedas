@@ -6,8 +6,9 @@ Este proyecto es un simple conversor de monedas que te permite convertir entre d
 
 - Conversión entre diferentes tipos de monedas.
 - Interfaz de usuario intuitiva y fácil de usar.
-- Tasa de cambio actualizada en tiempo real (se requiere conexión a internet).
-![image](https://github.com/EverthJPradoB/Conversor-de-Monedas/assets/131471022/68f8b2bc-451d-43ea-8598-eb72785297b8)
+- Tasa de cambio actualizada en tiempo real (se requiere conexión a internet)
+  
+![image](https://github.com/EverthJPradoB/Conversor-de-Monedas/assets/131471022/6a62dcbb-974b-449c-8710-96e7484ca427)
 
 
 ## Tecnologías Utilizadas
